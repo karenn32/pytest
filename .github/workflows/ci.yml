@@ -45,10 +45,10 @@ jobs:
           allure_results: allure-results
           allure_history: allure-history
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.PYTEST_TOKEN }}
-          publish_dir: allure-results  # Update this to where your generated results are located
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
         env:
-            GITHUB_TOKEN: ${{ secrets.PYTEST_TOKEN }}
+          PERSONAL_TOKEN: ${{secrets.PYTEST_TOKEN}}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
