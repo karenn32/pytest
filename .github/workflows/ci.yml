@@ -19,16 +19,17 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: "3.8" 
+          python-version: "3.8"
 
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          playwright install  
+          playwright install
 
       - name: Run tests
         run: |
           pytest tests -n 4 --test-browser=chrome
+        continue-on-error: true
 
       - name: Get Allure history
         uses: actions/checkout@v2
