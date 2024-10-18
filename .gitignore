@@ -1,3 +1,4 @@
 invoice.txt
 allure-results
 screenshots
+.pytest_cache
