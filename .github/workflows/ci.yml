@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main  # Change this to your default branch if different
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'  # Specify your Python version
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+        playwright install  # Install Playwright browsers
+
+    - name: Run tests
+      run: |
+        pytest tests -n 4 --browser=firefox 
+
+    - name: Build documentation
+      run: |
+        # If you are generating documentation, replace this with your documentation build command
+        echo "Documentation build command here"
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PYTEST_TOKEN }}
+        publish_dir: ./path/to/your/docs_or_results  # Update this to where your generated results are located
+      env:
+        GITHUB_TOKEN: ${{ secrets.PYTEST_TOKEN }}
