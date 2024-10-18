@@ -28,7 +28,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest tests -n 4 --test-browser=firefox
+          pytest tests -n 4 --test-browser=chrome
 
       - name: Get Allure history
         uses: actions/checkout@v2
