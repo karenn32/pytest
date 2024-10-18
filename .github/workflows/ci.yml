@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches:
-      - main  # Change this to your default branch if different
+      - kk-lq-25
   pull_request:
     branches:
       - main
@@ -13,42 +13,42 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.8'  # Specify your Python version
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8" # Specify your Python version
 
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-        playwright install  # Install Playwright browsers
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          playwright install  # Install Playwright browsers
 
-    - name: Run tests
-      run: |
-        pytest tests -n 4 --browser=firefox 
+      - name: Run tests
+        run: |
+          pytest tests -n 4 --browser=firefox
 
-    - name: Get Allure history
-      uses: actions/checkout@v2
-      if: always()
-      continue-on-error: true
-      with:
-        ref: gh-pages
-        path: gh-pages
+      - name: Get Allure history
+        uses: actions/checkout@v2
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
 
-    - name: Allure Report action from marketplace
-      uses: simple-elf/allure-report-action@master
-      if: always()
-      with:
-        allure_results: allure-results
-        allure_history: allure-history
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: allure-results
+          allure_history: allure-history
 
-    - name: Deploy report to Github Pages
-      if: always()
-      uses: peaceiris/actions-gh-pages@v2
-      env:
-        PERSONAL_TOKEN: ${{secrets.WDIOTOKEN}}
-        PUBLISH_BRANCH: gh-pages
-        PUBLISH_DIR: allure-history
+      - name: Deploy report to Github Pages
+        if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{secrets.WDIOTOKEN}}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
