@@ -30,15 +30,25 @@ jobs:
       run: |
         pytest tests -n 4 --browser=firefox 
 
-    - name: Build documentation
-      run: |
-        # If you are generating documentation, replace this with your documentation build command
-        echo "Documentation build command here"
-
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Get Allure history
+      uses: actions/checkout@v2
+      if: always()
+      continue-on-error: true
       with:
-        github_token: ${{ secrets.PYTEST_TOKEN }}
-        publish_dir: ./path/to/your/docs_or_results  # Update this to where your generated results are located
+        ref: gh-pages
+        path: gh-pages
+
+    - name: Allure Report action from marketplace
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      with:
+        allure_results: allure-results
+        allure_history: allure-history
+
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v2
       env:
-        GITHUB_TOKEN: ${{ secrets.PYTEST_TOKEN }}
+        PERSONAL_TOKEN: ${{secrets.WDIOTOKEN}}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-history
