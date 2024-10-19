@@ -28,7 +28,7 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest tests -n 4 --test-browser=chrome
+          pytest tests -n 4 --test-browser=chrome --alluredir=allure-results
         continue-on-error: true
 
       - name: Get Allure history
