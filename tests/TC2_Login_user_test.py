@@ -16,15 +16,15 @@ def test_register_user(page: Page):
     signup_page = SignupPage(page)
     home_page = HomePage(page)
 
-    # Create new user
-    random_email = f"{generate_random_string(8)}@example.com"
-    random_name = generate_random_string(8)
-    random_password = generate_random_string(8)
-
     # Create a directory for the test case screenshots
     test_case_name = "test_register_user"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
+
+    # Create new user
+    random_email = f"{generate_random_string(8)}@example.com"
+    random_name = generate_random_string(8)
+    random_password = generate_random_string(8)
 
     with allure.step("Create user via API"):
         create_user_via_api(name=random_name, email=random_email, password=random_password)
