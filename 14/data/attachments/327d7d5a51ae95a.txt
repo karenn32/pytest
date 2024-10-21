@@ -1,0 +1,1 @@
+Carousel element 1 is visible on the screen.
