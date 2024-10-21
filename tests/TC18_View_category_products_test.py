@@ -13,7 +13,7 @@ def test_view_category_products(page: Page):
     category_page = CategoryPage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_view_category_products"
+    test_case_name = "TC18_View_Category_Products_Test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

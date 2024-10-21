@@ -13,7 +13,7 @@ def test_contact_us_form(page: Page):
     contact_page = ContactUsPage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_contact_us_form"
+    test_case_name = "TC6_Contact_us_test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

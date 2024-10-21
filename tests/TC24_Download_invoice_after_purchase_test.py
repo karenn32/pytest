@@ -30,7 +30,7 @@ def test_download_invoice_after_purchase_order(page: Page):
     random_email = f"{generate_random_string(8)}@example.com"
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_download_invoice_after_purchase_order"
+    test_case_name = "TC24_Download_Invoice_After_Purchase_Order_Test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

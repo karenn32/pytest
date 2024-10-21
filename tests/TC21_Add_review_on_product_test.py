@@ -16,7 +16,7 @@ def test_add_review_on_product(page: Page):
     product_details_page = ProductDetailsPage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_add_review_on_product"
+    test_case_name = "TC21_Add_Review_On_Product_Test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

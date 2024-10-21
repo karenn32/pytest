@@ -19,7 +19,7 @@ def test_register_user(page: Page):
     random_name = generate_random_string(8)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_logout_user"
+    test_case_name = "TC4_Logout_user_test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

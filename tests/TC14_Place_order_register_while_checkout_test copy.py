@@ -26,7 +26,7 @@ def test_place_order_register_while_checkout(page: Page):
     payment_done_page = PaymentDonePage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_place_order_register_while_checkout"
+    test_case_name = "TC14_Place_Order_Register_While_Checkout"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

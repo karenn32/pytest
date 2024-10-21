@@ -11,7 +11,7 @@ def test_verify_subscription_in_home_page(page: Page):
     home_page = HomePage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_verify_subscription_in_home_page"
+    test_case_name = "TC10_Verify_subscription_homepage_test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

@@ -13,7 +13,7 @@ def test_verify_subscription_in_cart_page(page: Page):
     cart_page = CartPage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_verify_subscription_in_cart_page"
+    test_case_name = "TC11_Verify_subscription_cartpage_test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

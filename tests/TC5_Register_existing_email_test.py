@@ -13,7 +13,7 @@ def test_register_existing_email(page: Page):
     home_page = HomePage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_register_existing_email"
+    test_case_name = "TC5_Register_existing_email_test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

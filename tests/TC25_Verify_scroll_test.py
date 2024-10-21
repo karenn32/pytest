@@ -11,7 +11,7 @@ def test_verify_scroll_up_functionality(page: Page):
     home_page = HomePage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_verify_scroll_up_functionality"
+    test_case_name = "TC25_Verify_Scroll_Up_Functionality"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

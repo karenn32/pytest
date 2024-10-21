@@ -12,7 +12,7 @@ from pages.signup_page import SignupPage
 
 @pytest.mark.usefixtures("page")
 @allure.feature("Checkout Address Verification")
-@allure.story("TC13_Verify_Address_Details_In_Checkout")
+@allure.story("TC23_Verify_Address_Details_In_Checkout")
 def test_verify_address_details_in_checkout(page: Page):
     home_page = HomePage(page)
     cart_page = CartPage(page)
@@ -40,7 +40,7 @@ def test_verify_address_details_in_checkout(page: Page):
     }
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_verify_address_details_in_checkout"
+    test_case_name = "TC23_Verify_Address_Details_In_Checkout"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

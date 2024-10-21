@@ -15,7 +15,7 @@ def test_add_recommended_product_to_cart(page: Page):
     products_page = ProductsPage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_add_recommended_product_to_cart"
+    test_case_name = "TC22_Add_Recommended_Product_To_Cart_Test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

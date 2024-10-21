@@ -6,12 +6,12 @@ from pages.home_page import HomePage
 
 @pytest.mark.usefixtures("page")
 @allure.feature("Scroll Functionality")
-@allure.story("TC16_Verify_Scroll_Up_Without_Arrow_Button")
+@allure.story("TC26_Verify_Scroll_Up_Without_Arrow_Button")
 def test_verify_scroll_up_without_arrow_button(page: Page):
     home_page = HomePage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_verify_scroll_up_without_arrow_button"
+    test_case_name = "TC26_Verify_Scroll_Up_Without_Arrow_Button"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 

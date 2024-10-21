@@ -13,7 +13,7 @@ def test_search_product(page: Page):
     home_page = HomePage(page)
 
     # Create a directory for the test case screenshots
-    test_case_name = "test_search_product"
+    test_case_name = "TC9_Search_product_test"
     screenshots_dir = os.path.join(os.getcwd(), "screenshots", test_case_name)
     os.makedirs(screenshots_dir, exist_ok=True)
 
